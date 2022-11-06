@@ -1,0 +1,35 @@
+.PhoneBookList__list {
+  margin-left: 10px;
+  width: 300px;
+}
+
+.PhoneBookList__item {
+  display: flex;
+  padding: 5px;
+  margin-top: 2px;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 40px;
+}
+.PhoneBookList__item:hover,
+.PhoneBookList__item:focus {
+  background-color: rgb(241, 252, 242);
+  border-radius: 5px;
+  outline: 1px solid rgb(165, 165, 165);
+  box-shadow: 5px 9px 6px -8px rgb(117, 117, 126);
+}
+
+.PhoneBookList__btn {
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+}
+.PhoneBookList__btn:focus,
+.PhoneBookList__btn:hover {
+  background-color: rgb(255, 197, 197);
+  color: rgb(227, 0, 0);
+}

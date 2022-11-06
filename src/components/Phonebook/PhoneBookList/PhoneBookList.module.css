@@ -1,6 +1,6 @@
 .PhoneBookList__list {
   margin-left: 10px;
-  width: 300px;
+  width: 400px;
 }
 
 .PhoneBookList__item {
@@ -21,8 +21,8 @@
 }
 
 .PhoneBookList__btn {
-  width: 50px;
-  height: 20px;
+  width: 100px;
+  height: 25px;
   cursor: pointer;
   margin-left: 5px;
   border: none;

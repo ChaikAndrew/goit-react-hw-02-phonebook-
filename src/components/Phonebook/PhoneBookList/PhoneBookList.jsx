@@ -1,4 +1,3 @@
-import React from 'react';
 import s from './PhoneBookList.module.css';
 
 const PhoneBookList = ({ contacts, ondeletePhoneBook }) => (
@@ -11,7 +10,7 @@ const PhoneBookList = ({ contacts, ondeletePhoneBook }) => (
           onClick={() => ondeletePhoneBook(id)}
           className={s.PhoneBookList__btn}
         >
-          delete
+          Delete contact
         </button>
       </li>
     ))}

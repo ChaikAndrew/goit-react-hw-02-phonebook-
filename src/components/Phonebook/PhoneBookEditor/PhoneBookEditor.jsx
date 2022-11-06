@@ -2,7 +2,8 @@ import { Component } from 'react';
 
 class PhoneBookEditor extends Component {
   state = {
-    // contacts: [],
+    contacts: [],
+
     name: '',
     number: '',
   };
@@ -17,23 +18,31 @@ class PhoneBookEditor extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    this.props.onSubmit(this.state.name, this.state.number);
+    const { name, number } = this.state;
+    this.props.onSubmit(name, number);
     this.setState({ name: ' ', number: ' ' });
 
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input value={this.state.name} onChange={this.handleChangeName}></input>
+        <p>Name</p>
+        <input
+          value={this.state.name}
+          onChange={this.handleChangeName}
+          placeholder="Chaika Andrii"
+          required
+        ></input>
+        <p>Number</p>
         <input
           value={this.state.number}
           onChange={this.handleChangeNumber}
           type="tel"
           name="number"
-          //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          placeholder="+38(050)505-55-55"
+          pattern="\+?[0-9\s\-\(\)]+"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         ></input>

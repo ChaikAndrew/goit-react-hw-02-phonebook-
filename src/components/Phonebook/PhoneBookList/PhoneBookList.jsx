@@ -1,7 +1,8 @@
-import s from './PhoneBookList.module.css';
-
 import { FcPhoneAndroid } from 'react-icons/fc';
 import { BsFillPersonFill } from 'react-icons/bs';
+import ReactTooltip from 'react-tooltip';
+
+import s from './PhoneBookList.module.css';
 
 const PhoneBookList = ({ contacts, ondeletePhoneBook }) => (
   <ul className={s.PhoneBookList__list}>
@@ -21,6 +22,7 @@ const PhoneBookList = ({ contacts, ondeletePhoneBook }) => (
             onClick={() => ondeletePhoneBook(id)}
             className={s.PhoneBookList__btn}
           >
+            <ReactTooltip textColor="white" backgroundColor="#ff3333" />
             Delete
           </button>
         </div>

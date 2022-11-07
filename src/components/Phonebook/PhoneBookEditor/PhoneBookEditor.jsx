@@ -4,7 +4,6 @@ import s from './PhoneBookEditor.module.css';
 class PhoneBookEditor extends Component {
   state = {
     contacts: [],
-
     name: '',
     number: '',
   };
@@ -22,8 +21,6 @@ class PhoneBookEditor extends Component {
     const { name, number } = this.state;
     this.props.onSubmit(name, number);
     this.setState({ name: ' ', number: ' ' });
-
-    // console.log(this.state);
   };
 
   render() {

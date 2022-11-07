@@ -9,6 +9,7 @@ const Filter = ({ value, onChange }) => (
       type="text"
       value={value}
       onChange={onChange}
+      placeholder="Enter contact name"
     ></input>
   </label>
 );

@@ -3,10 +3,9 @@ import shortid from 'shortid';
 import PhoneBookList from './Phonebook/PhoneBookList/PhoneBookList';
 import PhoneBookEditor from './Phonebook/PhoneBookEditor/PhoneBookEditor';
 import Filter from './Phonebook/PhoneBookFilter/PhoneBookFilter';
-
 import contactsList from 'components/contactsList.json';
-
 import s from './Container.module.css';
+
 class App extends Component {
   state = {
     contacts: contactsList,
@@ -40,8 +39,8 @@ class App extends Component {
   render() {
     const { contacts, filter } = this.state;
 
-    const normalizedFilter = this.state.filter.toLowerCase();
-    const visibleContacts = this.state.contacts.filter(contact =>
+    const normalizedFilter = filter.toLowerCase();
+    const visibleContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
     return (

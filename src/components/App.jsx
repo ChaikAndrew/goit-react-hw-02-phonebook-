@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
 import PhoneBookList from './Phonebook/PhoneBookList/PhoneBookList';
-import contactsList from 'components/contactsList.json';
-
 import PhoneBookEditor from './Phonebook/PhoneBookEditor/PhoneBookEditor';
 import Filter from './Phonebook/PhoneBookFilter/PhoneBookFilter';
 
+import contactsList from 'components/contactsList.json';
+
+import s from './Container.module.css';
 class App extends Component {
   state = {
     contacts: contactsList,
@@ -46,10 +47,12 @@ class App extends Component {
       contact.name.toLowerCase().includes(normalizedFilter)
     );
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <div className={s.Phonebook__container}>
+        <h1 className={s.Phonebook__title}>Phonebook</h1>
         <PhoneBookEditor onSubmit={this.addContact} />
-        <p>Total number of contacts: {contacts.length}</p>
+        <p className={s.Contacts__sum}>
+          Total number of contacts: {contacts.length}
+        </p>
         <Filter value={filter} onChange={this.changeFilter} />
 
         <PhoneBookList

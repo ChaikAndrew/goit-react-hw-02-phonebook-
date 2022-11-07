@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import s from './PhoneBookEditor.module.css';
 
 class PhoneBookEditor extends Component {
   state = {
@@ -27,16 +28,18 @@ class PhoneBookEditor extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <p>Name</p>
+      <form onSubmit={this.handleSubmit} className={s.PhoneBook__form}>
+        <p className={s.Name__editor}>Name </p>
         <input
+          className={s.Form__input}
           value={this.state.name}
           onChange={this.handleChangeName}
           placeholder="Chaika Andrii"
           required
         ></input>
-        <p>Number</p>
+        <p className={s.Namber__editor}>Number</p>
         <input
+          className={s.Form__input}
           value={this.state.number}
           onChange={this.handleChangeNumber}
           type="tel"
@@ -46,7 +49,9 @@ class PhoneBookEditor extends Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         ></input>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={s.PhoneBookList__btn}>
+          Add contact
+        </button>
       </form>
     );
   }

@@ -1,5 +1,5 @@
 import s from './PhoneBookList.module.css';
-import ReactTooltip from 'react-tooltip';
+
 import { FcPhoneAndroid } from 'react-icons/fc';
 import { BsFillPersonFill } from 'react-icons/bs';
 

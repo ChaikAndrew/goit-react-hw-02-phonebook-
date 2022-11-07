@@ -10,9 +10,7 @@ import s from './Container.module.css';
 class App extends Component {
   state = {
     contacts: contactsList,
-    // name: '',
     filter: '',
-    // number: '',
   };
 
   addContact = (name, number) => {

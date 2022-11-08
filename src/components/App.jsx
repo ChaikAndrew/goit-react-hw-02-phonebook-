@@ -6,6 +6,10 @@ import Filter from './Phonebook/PhoneBookFilter/PhoneBookFilter';
 import contactsList from 'components/contactsList.json';
 import s from './Container.module.css';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { customToast } from './helper';
+
 class App extends Component {
   state = {
     contacts: contactsList,
@@ -13,15 +17,35 @@ class App extends Component {
   };
 
   addContact = (name, number) => {
-    const contact = {
-      id: shortid.generate(),
-      name,
-      number,
-    };
+    const findName = this.state.contacts.find(contact => contact.name === name);
 
-    this.setState(prevState => ({
-      contacts: [contact, ...prevState.contacts],
-    }));
+    if (name === '') {
+      customToast(`Field name is empty`, 'error');
+      return;
+    }
+
+    if (number === '') {
+      customToast(`Field number is empty`, 'error');
+      return;
+    }
+
+    if (findName !== undefined) {
+      customToast(
+        `Contact name "${name}" is already in the contact list`,
+        'warning'
+      );
+    } else {
+      const contact = {
+        id: shortid.generate(),
+        name,
+        number,
+      };
+
+      this.setState(prevState => ({
+        contacts: [contact, ...prevState.contacts],
+      }));
+      customToast(`Contact "${name}" has been add`, 'success');
+    }
   };
 
   deletePhoneBook = contactsListId => {
@@ -30,6 +54,7 @@ class App extends Component {
         contact => contact.id !== contactsListId
       ),
     }));
+    customToast(`Contact has been deleted`, 'success');
   };
 
   changeFilter = e => {
@@ -56,6 +81,7 @@ class App extends Component {
           contacts={visibleContacts}
           ondeletePhoneBook={this.deletePhoneBook}
         />
+        <ToastContainer />
       </div>
     );
   }

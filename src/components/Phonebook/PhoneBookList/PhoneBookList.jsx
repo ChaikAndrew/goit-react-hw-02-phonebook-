@@ -1,5 +1,6 @@
 import { FcPhoneAndroid } from 'react-icons/fc';
 import { BsFillPersonFill } from 'react-icons/bs';
+import { RiDeleteBin5Line } from 'react-icons/ri';
 import ReactTooltip from 'react-tooltip';
 
 import s from './PhoneBookList.module.css';
@@ -10,6 +11,7 @@ const PhoneBookList = ({ contacts, ondeletePhoneBook }) => (
       <li key={id} className={s.PhoneBookList__item}>
         <div className={s.Contacts__name}>
           <BsFillPersonFill className={s.Form__icon} />
+
           {name}
         </div>
         <div className={s.Contacts__phone}>
@@ -23,7 +25,8 @@ const PhoneBookList = ({ contacts, ondeletePhoneBook }) => (
             className={s.PhoneBookList__btn}
           >
             <ReactTooltip textColor="white" backgroundColor="#ff3333" />
-            Delete
+            {/* Delete */}
+            <RiDeleteBin5Line className={s.Form__icon} />
           </button>
         </div>
       </li>

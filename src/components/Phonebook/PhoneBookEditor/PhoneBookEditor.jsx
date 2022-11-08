@@ -19,7 +19,9 @@ class PhoneBookEditor extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, number } = this.state;
-    this.props.onSubmit(name, number);
+    const nameValue = name.trim();
+    const numberValue = number.trim();
+    this.props.onSubmit(nameValue, numberValue);
     this.setState({ name: ' ', number: ' ' });
   };
 

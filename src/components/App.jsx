@@ -68,9 +68,10 @@ class App extends Component {
     const visibleContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
+
     return (
       <div className={s.Phonebook__container}>
-        <h1 className={s.Phonebook__title}>MyPhonebook</h1>
+        <h1 className={s.Phonebook__title}>Phonebook</h1>
         <PhoneBookEditor onSubmit={this.addContact} />
         <p className={s.Contacts__sum}>
           Total number of contacts: {contacts.length}

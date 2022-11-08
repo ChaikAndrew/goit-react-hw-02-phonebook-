@@ -13,7 +13,10 @@ export const customToast = (message, type) => {
     case 'success':
       customType = toast.TYPE.SUCCESS;
       break;
+    default:
+      customType = toast.TYPE.DEFAULT;
   }
+
   toast(message, {
     type: customType,
   });
